@@ -2,290 +2,166 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BPA – Business Professionals of America | Get Involved</title>
-  <!-- Simple, clean style — easy to read and edit -->
+  <title>BPA - Business Professionals of America</title>
+
+  <!-- Simple CSS — easy to change -->
   <style>
-    /* ---- global reset & fonts ---- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
+    /* basic page look */
     body {
-      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background: #f5f7fa;
-      color: #1e2b3a;
-      line-height: 1.5;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
       padding: 20px;
+      color: #222;
     }
 
-    /* ---- main card container ---- */
+    /* everything sits inside this box */
     .page {
-      max-width: 1100px;
+      max-width: 800px;
       margin: 0 auto;
-      background: white;
-      border-radius: 30px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      padding: 35px 40px 45px;
+      background-color: white;
+      border: 3px solid #004a99;
+      border-radius: 10px;
+      padding: 25px;
     }
 
-    /* ---- header area with logo-like BPA text ---- */
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      border-bottom: 4px solid #004a99;
-      padding-bottom: 18px;
-    }
-
-    .bpa-badge {
-      background: #004a99;
-      color: white;
-      font-weight: 800;
-      font-size: 2.4rem;
-      padding: 6px 20px;
-      border-radius: 60px;
-      letter-spacing: 2px;
-      box-shadow: 0 4px 0 #002b5c;
-    }
-
-    .header h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      color: #002b5c;
-      margin-left: 8px;
-    }
-
-    .header h1 span {
-      font-weight: 300;
+    /* top header */
+    h1 {
       color: #004a99;
-      font-size: 1.5rem;
-      display: block;
+      font-size: 36px;
+      margin-bottom: 5px;
     }
 
-    /* ---- hero / promo section ---- */
-    .hero {
-      background: linear-gradient(145deg, #e9f0fc, #ffffff);
-      border-radius: 24px;
-      padding: 28px 30px;
-      margin: 25px 0 30px;
-      border-left: 10px solid #004a99;
+    .tagline {
+      color: #555;
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 25px;
     }
 
-    .hero h2 {
-      font-size: 2rem;
-      color: #002b5c;
-      margin-bottom: 10px;
-      font-weight: 700;
+    /* section headings */
+    h2 {
+      color: #004a99;
+      font-size: 24px;
+      border-bottom: 2px solid #004a99;
+      padding-bottom: 5px;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      color: #2c3e50;
-      max-width: 750px;
-      margin-bottom: 20px;
+    /* paragraph text */
+    p {
+      font-size: 16px;
+      line-height: 1.5;
     }
 
-    .cta-button {
+    /* big blue button */
+    .button {
       display: inline-block;
-      background: #004a99;
+      background-color: #004a99;
       color: white;
+      padding: 12px 25px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2rem;
-      padding: 14px 38px;
-      border-radius: 50px;
-      transition: 0.2s;
-      border: 2px solid #004a99;
-      box-shadow: 0 5px 0 #002b5c;
-      margin-top: 6px;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
-    .cta-button:hover {
-      background: #002b5c;
-      border-color: #002b5c;
-      box-shadow: 0 2px 0 #001a3b;
-      transform: translateY(3px);
+    .button:hover {
+      background-color: #002b5c;
     }
 
-    /* ---- grid for three benefit cards ---- */
+    /* three benefit boxes */
     .benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-      margin: 35px 0 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
 
     .card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 25px 20px;
-      box-shadow: 0 6px 16px rgba(0, 74, 153, 0.1);
-      border: 1px solid #d9e5f2;
-      transition: 0.15s;
-    }
-
-    .card:hover {
-      border-color: #004a99;
-      box-shadow: 0 10px 22px rgba(0, 74, 153, 0.18);
-      transform: translateY(-4px);
-    }
-
-    .card .icon {
-      font-size: 2.8rem;
-      margin-bottom: 12px;
-      display: block;
+      flex: 1;
+      min-width: 200px;
+      background-color: #eef4fe;
+      border: 2px solid #b3cce6;
+      border-radius: 8px;
+      padding: 15px;
     }
 
     .card h3 {
-      font-size: 1.6rem;
-      color: #002b5c;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .card p {
-      color: #2d4055;
-      font-size: 1rem;
-    }
-
-    /* ---- upcoming event / info line ---- */
-    .info-bar {
-      background: #eef4fe;
-      border-radius: 40px;
-      padding: 18px 28px;
-      margin: 25px 0 20px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .info-bar p {
-      font-size: 1.15rem;
-      font-weight: 500;
-    }
-
-    .info-bar strong {
       color: #004a99;
+      margin-top: 0;
     }
 
-    .info-bar .date {
-      background: #004a99;
-      color: white;
-      padding: 8px 22px;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.3px;
-    }
-
-    /* ---- simple footer ---- */
-    .footer {
-      margin-top: 35px;
+    /* event box */
+    .event {
+      background-color: #eef4fe;
+      border: 2px dashed #004a99;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 25px;
       text-align: center;
-      color: #5c6f82;
-      font-size: 0.95rem;
-      border-top: 1px solid #ccdae9;
-      padding-top: 22px;
     }
 
-    .footer a {
-      color: #004a99;
-      text-decoration: none;
-      font-weight: 500;
+    /* footer */
+    .footer {
+      margin-top: 30px;
+      border-top: 2px solid #ccc;
+      padding-top: 15px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* small tweaks for mobile */
-    @media (max-width: 600px) {
-      .page {
-        padding: 20px 18px 30px;
-      }
-      .header {
-        flex-wrap: wrap;
-      }
-      .bpa-badge {
-        font-size: 1.8rem;
-        padding: 4px 16px;
-      }
-      .header h1 {
-        font-size: 1.5rem;
-      }
-      .hero h2 {
-        font-size: 1.7rem;
-      }
-      .info-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-    }
   </style>
 </head>
 <body>
+
   <div class="page">
-    <!-- ========== HEADER ========== -->
-    <header class="header">
-      <div class="bpa-badge">BPA</div>
-      <h1>
-        Business Professionals of America
-        <span>Learn. Lead. Succeed.</span>
-      </h1>
-    </header>
 
-    <!-- ========== HERO / MAIN PROMO ========== -->
-    <section class="hero">
-      <h2>Ready to level up your future?</h2>
-      <p>
-        BPA is where students become business leaders, tech innovators, and confident professionals. 
-        Join a community that helps you build real skills — for college, career, and life.
-      </p>
-      <a href="#" class="cta-button">Join BPA today →</a>
-    </section>
+    <!-- HEADER -->
+    <h1>BPA</h1>
+    <p class="tagline">Business Professionals of America — Learn. Lead. Succeed.</p>
 
-    <!-- ========== 3 KEY BENEFITS (CARDS) ========== -->
-    <section class="benefits">
+    <!-- PROMO TEXT -->
+    <h2>Join BPA!</h2>
+    <p>
+      BPA is a student club where you learn business, technology, and leadership skills.
+      You can compete in events, go to conferences, and make new friends.
+      It looks great on college applications too!
+    </p>
+    <a href="#" class="button">Join Today</a>
+
+    <!-- BENEFITS -->
+    <h2>Why Join?</h2>
+    <div class="benefits">
       <div class="card">
-        <span class="icon">🏆</span>
-        <h3>Compete</h3>
-        <p>Show off your skills in regional, state, and national leadership conferences. Win awards, gain confidence.</p>
+        <h3>🏆 Compete</h3>
+        <p>Enter contests at regional, state, and national levels. Win awards and build confidence.</p>
       </div>
       <div class="card">
-        <span class="icon">📈</span>
-        <h3>Grow</h3>
-        <p>Workshops, mentorship, and real-world projects in finance, coding, marketing, and more.</p>
+        <h3>📈 Grow</h3>
+        <p>Learn real skills like coding, marketing, finance, and public speaking.</p>
       </div>
       <div class="card">
-        <span class="icon">🤝</span>
-        <h3>Connect</h3>
-        <p>Meet students and business pros from across the country. Build a network that lasts.</p>
+        <h3>🤝 Connect</h3>
+        <p>Meet students and business leaders from all over the country.</p>
       </div>
-    </section>
-
-    <!-- ========== INFO BAR (UPCOMING EVENT) ========== -->
-    <div class="info-bar">
-      <p>📅 <strong>Next event:</strong> Fall Leadership Conference — open to all members!</p>
-      <span class="date">Nov 14–15</span>
     </div>
 
+    <!-- EVENT INFO -->
+    <div class="event">
+      <h2>Upcoming Event</h2>
+      <p><strong>Fall Leadership Conference</strong><br>November 14–15 — Open to all members!</p>
+    </div>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-      <p>© 2025 Business Professionals of America — student organization</p>
-      <p style="margin-top: 8px;">
-        🌐 <a href="#">www.bpa.org</a> &nbsp;|&nbsp; 
-        📧 <a href="mailto:info@bpa.org">info@bpa.org</a> &nbsp;|&nbsp; 
-        📍 Find a chapter near you
-      </p>
-    </footer>
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>© 2025 Business Professionals of America</p>
+      <p>www.bpa.org | info@bpa.org</p>
+    </div>
+
   </div>
+
 </body>
 </html>
